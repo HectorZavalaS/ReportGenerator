@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="siixsem_sys_lblPrint_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="preStocktakeReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="siixsem_sys_lblPrint_dbModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="siixsem_sys_lblPrint_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="siixsem_sys_lblPrint_dbEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="preStocktakeReport" ReturnType="Collection(siixsem_sys_lblPrint_dbModel.preStocktakeReport_Result)" />
+        </EntityContainer>
+        <ComplexType Name="preStocktakeReport_Result">
+          <Property Type="String" Name="ITEM_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ITEM_DESC" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="LOT_NUMBER" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="SCANNED_QTY" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="SUBINVENTORY_CODE" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="LOCATOR" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="BATCH_NO" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="SCANNED_BY" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="SCANNED_TIME" Nullable="true" MaxLength="40" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="siixsem_sys_lblPrint_dbModelStoreContainer" CdmEntityContainer="siixsem_sys_lblPrint_dbEntities" >
+          <FunctionImportMapping FunctionImportName="preStocktakeReport" FunctionName="siixsem_sys_lblPrint_dbModel.Store.preStocktakeReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="siixsem_sys_lblPrint_dbModel.preStocktakeReport_Result">
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_DESC" ColumnName="ITEM_DESC" />
+                <ScalarProperty Name="LOT_NUMBER" ColumnName="LOT_NUMBER" />
+                <ScalarProperty Name="SCANNED_QTY" ColumnName="SCANNED_QTY" />
+                <ScalarProperty Name="SUBINVENTORY_CODE" ColumnName="SUBINVENTORY_CODE" />
+                <ScalarProperty Name="LOCATOR" ColumnName="LOCATOR" />
+                <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+                <ScalarProperty Name="SCANNED_BY" ColumnName="SCANNED_BY" />
+                <ScalarProperty Name="SCANNED_TIME" ColumnName="SCANNED_TIME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
